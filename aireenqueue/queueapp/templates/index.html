@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<center>
+
+    <h3>Welcome to the queue system</h3>
+
+    <table style = class="table">
+
+        <tr>
+
+            <td>
+                <form method="get" action="">
+                    <button type="submit" name="1to2">From Q1 to Q2</button>
+                </form>
+            </td>
+
+            <td>
+                Queue 1
+            </td>
+
+            {% for value in queue1 %}
+
+                <td>
+                    {{ value }}
+                </td>
+
+            {% endfor %}
+
+        </tr>
+
+        <tr>
+            <td>
+                <form method="get" action="">
+                    <button type='submit' name="2to3">From Q2 to Q3</button>
+                </form>
+            </td>
+
+            <td>
+                Queue 2
+            </td>
+
+            {% for value in queue2 %}
+
+                <td>
+                    {{ value }}
+                </td>
+
+            {% endfor %}
+
+        </tr>
+
+        <tr>
+            <td>
+                <form method="get" action="">
+                    <button type='submit' name="remove">Remove last number</button>
+                </form>
+            </td>
+
+            <td>
+                Queue 3
+            </td>
+
+            {% for value in queue3 %}
+
+                <td>
+                    {{ value }}
+                </td>
+
+            {% endfor %}
+
+        </tr>
+
+    </table>
+
+    <form action="" method="post">
+
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button name="add">Add to Queue 1</button>
+
+    </form>
+
+    <div class="dependents">
+
+        {% if messages %}
+
+            <p>
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            </p>
+
+        {% endif %}
+
+    </div>
+
+</center>
+
+{% endblock %}

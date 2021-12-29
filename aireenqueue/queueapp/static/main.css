@@ -1,0 +1,22 @@
+table {
+  table-layout: fixed;
+  margin-top: 50px;
+  width: 80%;
+  max-width: 800px;
+}
+
+td {
+    height: 80px;
+    text-align: center;
+    vertical-align: sub;
+}
+
+h3 {
+    margin-top: 30px;
+}
+
+.dependents > p
+{
+    color: red;
+    margin-top: 20px;
+}
